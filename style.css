@@ -88,3 +88,14 @@ p { color: #cccccc; margin-bottom: 1.5rem; line-height: 1.4; }
     background: #00d4ff;
     color: #1a1a2e;
 }
+.btn-link {
+    text-decoration: none; /* Removes the underline from the link */
+    display: inline-block;
+    width: 100%; /* Makes the clickable area fill the card width if needed */
+}
+
+/* Ensure the button inside the link still looks the same */
+.btn {
+    width: 100%;
+    cursor: pointer;
+}
