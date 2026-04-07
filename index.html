@@ -3,177 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Street Humor Hub | @vetruk_x</title>
+    <title>Street Humor Hub | Live Global Chat</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* --- CSS STYLES --- */
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background: #050505;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-            overflow-x: hidden;
-        }
-
-        .profile-section { text-align: center; margin-bottom: 30px; }
-        .profile-pic {
-            width: 85px; height: 85px; background: #111;
-            border-radius: 50%; margin: 0 auto 15px;
-            border: 2px solid #00d4ff;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
-        }
-
-        h2 { font-size: 1.1rem; letter-spacing: 1px; font-weight: 800; }
-        .sub-head { font-size: 0.85rem; color: #666; margin-top: 5px; }
-
-        .links-container { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 12px; }
-
-        .link-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 18px; border-radius: 12px;
-            text-align: center; text-decoration: none; color: white;
-            font-weight: 700; cursor: pointer; transition: 0.2s;
-            display: block;
-        }
-
-        .highlight-whatsapp { border-color: #25d366; color: #25d366; }
-        .chat-trigger { border-color: #00d4ff; background: rgba(0, 212, 255, 0.05); }
-
-        .link-card:active { transform: scale(0.98); background: rgba(255, 255, 255, 0.1); }
-
-        /* CHAT WINDOW STYLES */
-        .chat-popup {
-            position: fixed;
-            bottom: -600px; /* Start hidden */
-            right: 20px;
-            width: calc(100% - 40px);
-            max-width: 350px;
-            height: 450px;
-            background: #0a0a0a;
-            border: 1px solid #333;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 9999;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-        }
-
-        .chat-popup.active { bottom: 20px; }
-
-        .chat-header {
-            padding: 15px; background: #111;
-            display: flex; align-items: center; justify-content: space-between;
-            border-top-left-radius: 15px; border-top-right-radius: 15px;
-            border-bottom: 1px solid #222;
-        }
-
-        .status-dot { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; margin-right: 8px; display: inline-block; box-shadow: 0 0 5px #00ff88; }
-
-        .chat-window { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #050505; }
-
-        .message { padding: 10px 14px; border-radius: 12px; font-size: 0.85rem; max-width: 80%; line-height: 1.4; }
-        .bot { background: #1a1a1a; align-self: flex-start; color: #ccc; }
-        .user { background: #00d4ff; color: black; align-self: flex-end; font-weight: 600; }
-
-        .chat-input-area { padding: 12px; display: flex; gap: 8px; border-top: 1px solid #222; background: #0a0a0a; }
-        #user-input { flex: 1; background: #000; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; outline: none; }
-        #send-btn { background: #00d4ff; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
-        .close-btn { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; line-height: 1; }
-
-        footer { margin-top: auto; padding-top: 40px; color: #444; font-size: 0.7rem; text-align: center; }
-    </style>
 </head>
 <body>
 
     <div class="profile-section">
         <div class="profile-pic"></div>
-        <h2>STREET HUMOR & RIDDLES</h2>
-        <p class="sub-head">The Home of Kenyan Vibes 🇰🇪</p>
+        <h2>STREET HUMOR GLOBAL LOBBY</h2>
+        <p class="sub-head">Chat live with the crew 🇰🇪</p>
     </div>
 
-    <div class="links-container">
-        <a href="https://whatsapp.com/channel/0029Vb7QkV14dTnBkzndP63f" class="link-card highlight-whatsapp" target="_blank">
-            <span>📢 FOLLOW OUR WHATSAPP CHANNEL</span>
-        </a>
-
-        <a href="https://www.instagram.com/vetruk_x" class="link-card" target="_blank">
-            <span>📸 INSTAGRAM: @VETRUK_X</span>
-        </a>
-
-        <div class="link-card chat-trigger" onclick="toggleChat()">
-            <span>💬 CHAT ON WEBSITE (LIVE)</span>
-        </div>
-
-        <a href="tel:+254797989297" class="link-card">
-            <span>📞 CONTACT TIMON: 0797989297</span>
-        </a>
-    </div>
-
-    <div id="chat-box" class="chat-popup">
+    <div class="chat-container glass-card">
         <div class="chat-header">
-            <div><span class="status-dot"></span><span>Live Chat: Timon</span></div>
-            <button class="close-btn" onclick="toggleChat()">×</button>
+            <span class="status-dot"></span>
+            <span>Global Chat (Live)</span>
         </div>
+        
         <div id="chat-window" class="chat-window">
-            <div class="message bot">Sasa! Welcome to the hub. Ask me anything about dev or the channel.</div>
-        </div>
+            </div>
+
         <div class="chat-input-area">
+            <input type="text" id="user-name" placeholder="Nickame..." style="width: 80px; background: #111; border: 1px solid #333; color: #00d4ff; padding: 5px; border-radius: 5px; margin-right: 5px;">
             <input type="text" id="user-input" placeholder="Type a message...">
             <button id="send-btn">SEND</button>
         </div>
     </div>
 
-    <footer>
-        <p>System Developed by Timon | 2026</p>
-    </footer>
+    <div class="links-container" style="margin-top: 20px;">
+        <a href="https://whatsapp.com/channel/0029Vb7QkV14dTnBkzndP63f" class="link-card highlight-whatsapp" target="_blank">
+            <span>📢 JOIN WHATSAPP CHANNEL</span>
+        </a>
+    </div>
 
-    <script>
-        /* --- JAVASCRIPT LOGIC --- */
-        function toggleChat() {
-            const chatBox = document.getElementById('chat-box');
-            chatBox.classList.toggle('active');
-        }
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, onChildAdded, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        // --- REPLACE THIS WITH YOUR FIREBASE CONFIG ---
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT.appspot.com",
+            messagingSenderId: "YOUR_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const messagesRef = ref(db, 'messages');
 
         const sendBtn = document.getElementById('send-btn');
         const userInput = document.getElementById('user-input');
+        const userName = document.getElementById('user-name');
         const chatWindow = document.getElementById('chat-window');
 
-        sendBtn.addEventListener('click', sendMessage);
-        userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
-
-        function sendMessage() {
+        // SEND MESSAGE
+        sendBtn.addEventListener('click', () => {
             const text = userInput.value.trim();
-            if (text === "") return;
+            const name = userName.value.trim() || "Guest";
 
-            // Add User Message
-            const userMsg = document.createElement('div');
-            userMsg.className = 'message user';
-            userMsg.innerText = text;
-            chatWindow.appendChild(userMsg);
+            if (text !== "") {
+                push(messagesRef, {
+                    username: name,
+                    message: text,
+                    timestamp: serverTimestamp()
+                });
+                userInput.value = "";
+            }
+        });
 
-            userInput.value = "";
+        // RECEIVE MESSAGES IN REAL-TIME
+        onChildAdded(messagesRef, (data) => {
+            const msgData = data.val();
+            const msgDiv = document.createElement('div');
+            
+            // Check if it's the user or someone else for styling
+            msgDiv.className = `message ${msgData.username === userName.value ? 'user' : 'bot'}`;
+            msgDiv.innerHTML = `<strong>${msgData.username}:</strong> ${msgData.message}`;
+            
+            chatWindow.appendChild(msgDiv);
             chatWindow.scrollTop = chatWindow.scrollHeight;
-
-            // Simple Auto-Response
-            setTimeout(() => {
-                const botMsg = document.createElement('div');
-                botMsg.className = 'message bot';
-                botMsg.innerText = "Thanks! I've received your message. I'll get back to you soon on Instagram.";
-                chatWindow.appendChild(botMsg);
-                chatWindow.scrollTop = chatWindow.scrollHeight;
-            }, 1000);
-        }
+        });
     </script>
 </body>
 </html>
