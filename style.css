@@ -99,3 +99,28 @@ p { color: #cccccc; margin-bottom: 1.5rem; line-height: 1.4; }
     width: 100%;
     cursor: pointer;
 }
+/* Add these new classes to your existing CSS */
+
+.contact-card {
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.contact-card:active {
+    background: rgba(0, 212, 255, 0.1) !important;
+    border-color: #00d4ff !important;
+}
+
+.card-content .icon {
+    font-size: 1.2rem;
+}
+
+/* Ensure the links look like professional buttons */
+.link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase; /* Keeps the 'Synthetic' tech feel */
+    letter-spacing: 1px;
+}
